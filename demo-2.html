@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100vh;
+      height: 100vh;
+      background: linear-gradient(to bottom, #000 0%, #5788fe 100%);
+    }
+    #root {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: #fe5757;
+      animation: colorChange 10s ease-in-out infinite;
+      animation-fill-mode: both;
+      /* background-image: url('./images/a.png');
+      background-repeat: no-repeat;
+      background-position: 0 100%;
+      background-size: cover; */
+    }
+    @keyframes colorChange {
+      0%, 100% {
+        opacity: 0;
+      }
+      50% {
+        opacity: .9;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+</body>
+</html>

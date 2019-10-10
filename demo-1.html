@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="400" height="400" id="canvas" />
+  <script>
+    const canvas = document.getElementById('canvas')
+    const ctx = canvas.getContext('2d')
+
+    // ctx.beginPath()
+    // ctx.arc(100, 100, 50, 0, Math.PI/2, false)
+    // ctx.closePath()
+    // ctx.strokeStyle = '#fff'
+    // ctx.stroke()
+
+    // ctx.beginPath()
+    // ctx.moveTo(0, 0);
+    // ctx.lineTo(100, 100)
+    // ctx.lineWidth = 10
+    // ctx.lineCap = 'round'
+    // ctx.strokeStyle = '#fff'
+    // ctx.stroke()
+
+    // ctx.beginPath()
+    // ctx.strokeRect(100, 0, 20, 20)
+
+    // ctx.beginPath()
+    // ctx.arc(100, 100, 50, 0, Math.PI*2, false)
+    // ctx.fillStyle = '#fff'
+    // ctx.shadowColor = '#fff'
+    // ctx.shadowBlur = 20
+    // ctx.fill()
+
+    var grad = ctx.createLinearGradient(100, 100, 100, 200)
+    grad.addColorStop(0, 'pink')
+    grad.addColorStop(1, 'white')
+
+    ctx.beginPath()
+    ctx.fillStyle = grad
+    ctx.fillRect(100, 100, 200, 200)
+  </script>
+</body>
+</html>
