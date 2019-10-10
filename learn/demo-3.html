@@ -28,28 +28,30 @@
     canvas.width = WIDTH;
     canvas.height = HEIGHT;
 
-    function Round_item(index,x,y) {
+    class Round_item {
+      constructor(index, x, y) {
         this.index = index;
         this.x = x;
         this.y = y;
         this.r = Math.random() * 2 + 1;
         var alpha = (Math.floor(Math.random() * 10) + 1) / 10 / 2;
         this.color = "rgba(255,255,255," + alpha + ")";
-    }
-    Round_item.prototype.draw = function() {
-      ctx.fillStyle = this.color;
-      ctx.shadowBlur = this.r * 2;
-      ctx.beginPath()
-      ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI, false)
-      ctx.closePath();
-      ctx.fill();
-    }
-    Round_item.prototype.move = function() {
-      this.y -= 0.15;
-      if(this.y <= -10) {
-        this.y = HEIGHT + 10
       }
-      this.draw();
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.shadowBlur = this.r * 2;
+        ctx.beginPath()
+        ctx.arc(this.x, this.y, this.r, 0, 2*Math.PI, false)
+        ctx.closePath();
+        ctx.fill();
+      }
+      move() {
+        this.y -= 0.15;
+        if(this.y <= -10) {
+          this.y = HEIGHT + 10
+        }
+        this.draw();
+      }
     }
 
     function animate() {
